@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+    color: #fff;
+    padding: 1rem;
+    height: 250px;
+  }
+  

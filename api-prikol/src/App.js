@@ -1,8 +1,7 @@
 
 import './App.css';
 import React from 'react';
-import Info from './components/info';
-import Form from './components/form';
+import Header from './components/Header';
 import Weather from './components/Weather';
 
 const API_KEY = 'abd7286aaa760f096197fd8fa46fecc6'
@@ -54,8 +53,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Info />
-        <Form weatherMethod={this.gettingWeather} />
+        <Header weatherMethod={this.weatherMethod} />
         <Weather
           temp={this.state.temp}
           city={this.state.city}
