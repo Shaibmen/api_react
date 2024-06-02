@@ -5,33 +5,34 @@ import Weather from "./Weather";
 
 class Header extends React.Component {
   render() {
+    const cities = this.props.weatherData.slice(0, 5); // Получаем первые 5 элементов массива
+
     return (
       <header className="header">
         <div className="header-container">
-          <div className="header-left"> 
+          <div className="header-left">
             <div className="header-info">
               <Info />
             </div>
             <div className="header-search">
               <Form weatherMethod={this.props.weatherMethod} />
             </div>
-          </div> 
-          {this.props.city && (
-            <div className="header-right"> 
-              <Weather
-                temp={this.props.temp}
-                city={this.props.city}
-                country={this.props.country}
-                pressure={this.props.pressure}
-                sunset={this.props.sunset}
-                error={this.props.error}
-              />
-            </div> 
-          )}
-          <div className="weather-box">Box 1</div>
-          <div className="weather-box">Box 2</div>
-          <div className="weather-box">Box 3</div>
-          <div className="weather-box">Box 4</div>
+          </div>
+          <div className="header-right">
+            {cities.map((weather, index) => ( // Теперь используем map для рендеринга первых 5 элементов
+              <div className="weather-box" key={index}>
+                <Weather
+                  temp={weather.temp}
+                  city={weather.city}
+                  country={weather.country}
+                  pressure={weather.pressure}
+                  sunset={weather.sunset}
+                />
+              </div>
+            ))}
+            {/* Добавляем вручную компоненты Weather в нужные div */}
+            
+          </div>
         </div>
       </header>
     );
