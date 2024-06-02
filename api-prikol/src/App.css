@@ -1,11 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #f5f5dc 0%, #e8e0c3 100%);
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .header {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    background-image: linear-gradient(to right, #ff9966, #ff5e62);
-    color: #fff;
-    padding: 1rem;
-    height: 250px;
-  }
-  
+  background: linear-gradient(to right, #ff512f 0%, #dd2476 100%);
+  color: white;
+  padding: 20px;
+  flex-shrink: 0;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+  margin-top: 50px; 
+}
+
+.header-info {
+  margin-bottom: 20px;
+}
+
+.header-search {
+  display: flex;
+}
+
+.header-search-form {
+  display: flex;
+  align-items: center;
+}
+
+.header-search-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.weather-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-left: 0;
+  color: black; /* Добавляем черный цвет текста */
+  position: relative; /* Добавляем относительное позиционирование */
+  top: -20px; /* Поднимаем блок на 20 пикселей вверх */
+}
+
+.main {
+  background: linear-gradient(to bottom, #f5f5dc 0%, #e8e0c3 100%);
+  padding: 20px;
+  flex-grow: 1;
+}

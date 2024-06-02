@@ -2,7 +2,9 @@
 import './App.css';
 import React from 'react';
 import Header from './components/Header';
+import Main from './components/Main';
 import Weather from './components/Weather';
+import Form from './components/form';
 
 const API_KEY = 'abd7286aaa760f096197fd8fa46fecc6'
 
@@ -14,7 +16,6 @@ class App extends React.Component {
     country: undefined,
     ressure: undefined,
     sunset: undefined,
-    error: undefined
   }
 
   gettingWeather = async (e) => {
@@ -36,7 +37,6 @@ class App extends React.Component {
         country: data.sys.country,
         pressure: data.main.pressure,
         sunset: sunset_date,
-        error: undefined
       });
     } else {
       this.setState({
@@ -45,24 +45,25 @@ class App extends React.Component {
         country: undefined,
         ressure: undefined,
         sunset: undefined,
-        error: "Введите название города"
       });
     }
   }
+
   
   render() {
     return (
       <div className="App">
-        <Header weatherMethod={this.weatherMethod} />
-        <Weather
-          temp={this.state.temp}
-          city={this.state.city}
-          country={this.state.country}
-          pressure={this.state.pressure}
-          sunset={this.state.sunset}
-          error={this.state.error}
-        />
-      </div>
+      <Header
+        weatherMethod={this.gettingWeather}
+        temp={this.state.temp}
+        city={this.state.city}
+        country={this.state.country}
+        pressure={this.state.pressure}
+        sunset={this.state.sunset}
+        error={this.state.error}
+      />
+      <Main />
+    </div>
     );
   }
 }
