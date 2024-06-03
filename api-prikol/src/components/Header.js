@@ -5,7 +5,7 @@ import Weather from "./Weather";
 
 class Header extends React.Component {
   render() {
-    const cities = this.props.weatherData.slice(0, 5); // Получаем первые 5 элементов массива
+    const cities = this.props.weatherData.slice(0, 5);
 
     return (
       <header className="header">
@@ -19,19 +19,17 @@ class Header extends React.Component {
             </div>
           </div>
           <div className="header-right">
-            {cities.map((weather, index) => ( // Теперь используем map для рендеринга первых 5 элементов
-              <div className="weather-box" key={index}>
+            {cities.map((weather, index) => (
+              <div key={index} className="weather-box">
                 <Weather
                   temp={weather.temp}
                   city={weather.city}
                   country={weather.country}
                   pressure={weather.pressure}
-                  sunset={weather.sunset}
+                  weather={weather.weather}
                 />
               </div>
             ))}
-            {/* Добавляем вручную компоненты Weather в нужные div */}
-            
           </div>
         </div>
       </header>

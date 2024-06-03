@@ -1,12 +1,12 @@
 import React from "react";
-import Weather from "./Weather";
+import WeatherForecast from "./WeatherForecast";
 
 class Main extends React.Component {
     render() {
         return(
-          <main className="main">
-          {/* Добавьте здесь контент для нижней части сайта */}
-        </main>
+      <main className="main">
+        <WeatherForecast forecastData={this.props.forecastData} currentWeather={this.props.currentWeather} />
+      </main>
         );
     }
 }
